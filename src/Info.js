@@ -1,147 +1,25 @@
 import React, { Component } from 'react';
 
-import Ideogram from 'ideogram';
-
 class AppIdeogram extends Component {
-
-  componentDidMount() {
-    return new Ideogram({
-      organism: 'human',
-      annotations: [{
-        name: 'GNRH2',
-        chr: '20',
-        start: 3026277,
-        stop: 3027468
-      },
-      {
-        name: 'DEFB118',
-        chr: '20',
-        start: 31368601,
-        stop: 31373923
-      },
-      {
-        name: 'DEFB119',
-        chr: '20',
-        start: 31377164,
-        stop: 31390590
-      },{
-        name: 'C20orf165',
-        chr: '20',
-        start: 44518897,
-        stop: 44520361
-      },
-      {
-        name: 'DEFB118',
-        chr: '20',
-        start: 31368601,
-        stop: 31373923
-      },
-      {
-        name: 'PMEPA1',
-        chr: '20',
-        start: 56283891,
-        stop: 56285395
-      },
-      {
-        name: 'IVL',
-        chr: '1',
-        start: 152908546,
-        stop: 152911886
-      },
-      {
-        name: 'CDH9',
-        chr: '5',
-        start: 26880597,
-        stop: 27038586
-      },
-      {
-        name: 'TERT',
-        chr: '5',
-        start: 1289275,
-        stop: 1295970
-      },
-      {
-        name: 'POMC',
-        chr: '2',
-        start: 25391072,
-        stop: 25391875
-      },
-      {
-        name: 'EFEMP1',
-        chr: '2',
-        start: 56150340,
-        stop: 56151180
-      },
-      {
-        name: 'HIST1H4D',
-        chr: '6',
-        start: 26188997,
-        stop: 26189295
-      },
-      {
-        name: 'PLA2G4E',
-        chr: '15',
-        start: 41981582,
-        stop: 42051190
-      },
-      {
-        name: 'KIR3DX1',
-        chr: '19',
-        start: 54532760,
-        stop: 54532760
-      },
-      {
-        name: 'ACER1',
-        chr: '19',
-        start: 6306142,
-        stop: 6333612
-      },
-      {
-        name: 'WT1',
-        chr: '11',
-        start: 32452144,
-        stop: 32452708
-      },
-      {
-        name: 'WT1',
-        chr: '11',
-        start: 32454874,
-        stop: 32457311
-      },
-      {
-        name: 'MADD',
-        chr: '11',
-        start: 47291200,
-        stop: 47291858
-      },
-      {
-        name: 'POLG2',
-        chr: '17',
-        start: 62492882,
-        stop: 62493323
-      },
-      {
-        name: 'SLC26A11',
-        chr: '17',
-        start: 78193980,
-        stop: 78194954
-      },
-      {
-        name: 'ASAM',
-        chr: '11',
-        start: 123066517,
-        stop: 123066986
-      }],
-      container: '#ideo-container'
-    });
-  }
 
   render() {
     return (
-    <div>
-      <div>helloo</div>
-      <div id="ideo-container"></div>
-      <div>bye</div>
+    <div style={{margin: '50px 15%'}} >
+      <h2>Introduction</h2>
+      <p>We partnered with Dr Noah Ollikainen, from the California Institute of Technology to use machine learning on DNA data to help cancer detection. 
+
+This webapp is part of our team’s submission to the 2020 Hack for Social Good Hackathon. </p>
+      <h2>Why</h2>
+      <p>The Cancer Genome Atlas Program is a project that collected over 2.5 petabytes of data over 12 years. Vast portions of this data potential are still untapped. Dr Noah Ollikainen, who is a computational biologist, reached out to Slalom to explore, analyze, and better understand the data collected through the TCGA Project. Our hope is to be able to streamline the cancer detection process by bringing new ways of identifying cancerous tissues. The first part of the project was visualizing this data and the relation between cancer development; this project won the Tableau Hackathon in 2019. We are now taking this to the next step by modeling the relation between DNA data and cancer development. </p>
+      <p>By partnering with CalTech, Dr Noah Ollikainen is bringing the domain knowledge while we are bringing novel ways of solving this problem through machine learning algorithms. </p>
+      <h2>What</h2>
+      <p>Our main focus was building a model to link DNA Methylation data with cancer development. DNA Methylation is DNA metadata and measures a process by which methyl groups are added on to the DNA molecule, on specific CpG sites.  </p>
+      <p>We carefully selected the 5,000 DNA sites that showed the greatest difference between cancerous and healthy patients. We then first built a model to predict whether the patient was likely to be diagnosed with cancer. We tried multiple machine learning algorithms and settled on using XGBoost. </p>
+      <p>Because our goal is to make our model widely available, we then moved on to developing our MVP: a web-application to allow users to interact with our trained model. </p>
+      <h2>Wow</h2>
+      <p>Our XGBoost model that predicts whether a patient’s tissue sample is cancerous has an overall accuracy of more than 99%. This means that fewer than 1 out 100 samples will be misclassified. Building on this, our MVP allows a non-initiated machine learning user to submit new observations to the model and receive the model’s predictions. Moreover, the MVP explains how our model makes the decision. By displaying the features of the model, thus the DNA sites that the model is using, it allows researchers to look further into the role of those genes into cancer development. All of this, we hope will help streamline cancer detection and tell with greater efficiency whether someone could be diagnosed with cancer.  </p>
+      <h2>Who are we?</h2>
+      <p>Our team is composed of four data scientists - Antonin Fontaine (NYC), Malik Mubeen (NYC), Hassan Mahmood (NYC) and Adrien Galamez (NYC), one software engineer – Jeremy Odell (NYC) and one consultant with a bioengineering background – Elizabeth Schongar (Denver). </p>
     </div>
     );
   }

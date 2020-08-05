@@ -4,8 +4,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 import Info from './Info'
+import Model from './Model'
 import Results from './Results'
 
  
@@ -109,7 +111,7 @@ class Reader extends Component {
  
   render() {
     return (
-      <div style={{ padding: 25 }}>
+      <div style={{margin: '50px 15%'}}>
         <CSVReader
           ref={buttonRef}
           onFileLoad={this.handleOnFileLoad}
@@ -226,7 +228,7 @@ export default function App() {
 
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Project Info" {...a11yProps(0)} />
           <Tab label="Project Methodology" {...a11yProps(1)} />
@@ -237,7 +239,7 @@ export default function App() {
         <Info />
       </TabPanel>
       <TabPanel value={value} index={1}>
-      To be built: Info about methodology page
+        <Model />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Reader />
